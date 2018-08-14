@@ -8,61 +8,22 @@
 </head>
 <body>
 
-    <script>
-        // Randomizes a computer selection
-        function computerPlay(){
-            let compSel = ['rock', 'paper', 'scissors'];
-            randomSelection = compSel[Math.floor(Math.random() * 3)];
-            return randomSelection;
-      }
-        //Conditional function for the rps scenarios
-        function playRound(playerSelection, computerSelection) {
-        playerSel1 = playerSelection.toLowerCase();
-        if (playerSelection === computerSelection) {
-          return 'Tie!';
-        }
-        else if (playerSel1 === 'rock') {
-          switch (computerSelection) {
-              case 'paper':
-                return 'Paper covers rock, you lose!';
-                break;
-              default:
-                return 'Those scissors never stood a chance. Nice job!';
-          }
-        }
-        else if (playerSel1 === 'paper') {
-          switch (computerSelection) {
-            case 'rock':
-              return 'Nice job, paper covers rock!';
-              break;
-            default:
-              return 'The scissors ended you. Maybe next time!';
-          }
-        }
-          else if (playerSel1 === 'scissors') {
-            switch (computerSelection) {
-              case 'paper':
-                return 'You cut that paper with no problem!';
-                break;
-              default:
-                return 'Maybe next time... not enough for The Rock';
-            }
-          }
-      }
-      
-      //Plays 5 rounds of the game
-      function game() {
-        let gamePlay = 0
-        while (gamePlay < 5) {
-          playerSelection = prompt('Rock, Paper, Scissors.......boom!')
-          computerSelection = computerPlay();
-          console.log(playRound(playerSelection, computerSelection));
-          gamePlay++;
-        }
-      }
-      game();    
-    </script>
-
+  <div id="controls">
+    <button class="btn" id="rock">Rock</button>
+    <button class="btn" id="paper">Paper</button>
+    <button class="btn" id="scissors">Scissors</button>
+  </div><br>
+  <div id="results">
+    <label>Your score:</label>
+    <span id="player-score"></span>
+    <br>
+    <label>Computer's score:</label>
+    <span id="computer-score"></span>
+    <p id="text-output"></p>
+  </div>
+  
+  
+<script src = "main.js"></script>
 
 </body>
 </html>
